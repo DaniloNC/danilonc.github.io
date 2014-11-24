@@ -1,0 +1,12 @@
+# Site settings
+title: "DaniloNC Personal Blog"
+url: "http://danilonc.github.io"
+highlighter: pygments
+
+#Build settings
+markdown: kramdown
+
+collections:
+  writeups:
+    output: true
+    permalink: /writeups/:path/

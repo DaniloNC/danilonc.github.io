@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<!-- start head.html -->
+	<head>
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> -->
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="/css/emacs.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<title>DaniloNC Personal Blog</title>
+	</head>
+<!-- end head.html -->
+	<body>
+		<!-- start writeup.html -->
+<div id="writeup-info" >
+		<h1>Pwn2Win 2014 - 70's</h1>
+	<p>
+		Points: 15, Category: reversing
+	</p>
+	<p>
+		Author: danilonc,  Team:BugNotFound
+	</p>
+</div>
+
+<div id="writeup-content">
+	<blockquote>
+  <p>05 71m35 c4nd1d4705 40 717ul0 d3 "1337 d45 64l4x145" pr3c154m pr0v4r 53u c0nh3c1m3n70 c0m l1n6u463n5 d3 pr06r4m4c40 0ld5ch00l5! </p>
+</blockquote>
+
+<blockquote>
+  <p>: pri dup 256 mod emit 256 / dup 256 mod emit 256 / dup 256 mod emit 256 / emit ; 
+1701978177 pri 1936683123 pri 3273679220 pri 1092631209 pri 1667330658 pri 1650549857 pri 169959794 pri</p>
+</blockquote>
+
+<h2 id="write-up">Write-up</h2>
+<hr />
+<p>Leet speak: Os times candidatos ao titulo de “leet das galaxias” precisam provar seu conhecimento com linguagens de programação old-schools!
+Conforme descrito no leet speak acima o codigo foi escrito usando uma linguagem de programação bem antiga.</p>
+
+<p>Buscando no google por <code>"Programming language" pri dup mod emit</code> encontramos alguns resultados sugerindo o código foi escrito em <a href="http://en.wikipedia.org/wiki/Forth_%28programming_language%29">FORTH</a></p>
+
+<p>Executando em um shell:</p>
+
+<div class="highlight"><pre><code class="language-shell-session" data-lang="shell-session"><span class="gp">danilonc@blackhawk:~/CTFs/Pwn2Win/70s$</span> cat &gt; file.g
+<span class="go">: pri dup 256 mod emit 256 / dup 256 mod emit 256 / dup 256 mod emit 256 / emit ; </span>
+<span class="go">1701978177 pri 1936683123 pri 3273679220 pri 1092631209 pri 1667330658 pri 1650549857 pri 169959794 pri</span>
+
+<span class="gp">danilonc@blackhawk:~/CTFs/Pwn2Win/70s$</span> gforth file.g 
+<span class="go">A resposta é: Abracadabra!</span>
+<span class="go">Gforth 0.7.2, Copyright (C) 1995-2008 Free Software Foundation, Inc.</span>
+<span class="go">Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license&#39;</span>
+<span class="go">Type `bye&#39; to exit</span>
+<span class="go">bye</span></code></pre></div>
+
+<p>Flag: <strong>Abracadabra!</strong></p>
+
+</div>
+<!-- end writeup.html -->
+	</body>
+</html>
